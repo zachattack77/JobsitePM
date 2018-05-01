@@ -1,8 +1,5 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
@@ -28,7 +25,7 @@
       </ion-item>
 
 
-      <button ion-button  type="submit">Login</button>
+      <button ion-button (click)="goToProjects()" type="submit">Login</button>
     </ion-list>
 
     <pre>{{formgroup.value | json}}</pre>

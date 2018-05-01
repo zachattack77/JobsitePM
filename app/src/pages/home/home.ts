@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController , NavParams} from 'ionic-angular';
 import {FormBuilder,FormGroup,Validators,AbstractControl} from "@angular/forms";
 import {HttpHeaders, HttpClientModule} from "@angular/common/http";
+import {ProjectPreview} from "../projectpreview/projectpreview";
 
 
 @Component({
@@ -31,6 +32,13 @@ export class HomePage {
 
 
   }
+
+  goToProjects() {
+      this.navCtrl.push(ProjectPreview, {
+        item: "HELLO"
+
+      });
+    }
 
 //functions
   postData()
