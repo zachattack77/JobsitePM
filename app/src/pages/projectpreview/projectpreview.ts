@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import {NavController, NavParams} from "ionic-angular";
+import {PhotoSelector} from "../phototselector/photoselector";
 
 @Component({
-  selector: 'prject-preview',
+  selector: 'project-preview',
   templateUrl: 'projectpreview.html'
 })
 export class ProjectPreview {
@@ -13,6 +14,12 @@ export class ProjectPreview {
   }
 
 
+
+  goToPhotoSelector(){
+    this.navCtrl.push(PhotoSelector,{
+
+    });
+  }
   // constructor(private navParams: NavParams){
   //   this.item = this.navParams.get('item');
   // }

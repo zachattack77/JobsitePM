@@ -7,12 +7,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {ProjectPreview} from "../pages/projectpreview/projectpreview";
+import {PhotoSelector} from "../pages/phototselector/photoselector";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ProjectPreview
+    ProjectPreview,
+    PhotoSelector
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import {ProjectPreview} from "../pages/projectpreview/projectpreview";
   entryComponents: [
     MyApp,
     HomePage,
-    ProjectPreview
+    ProjectPreview,
+    PhotoSelector
   ],
   providers: [
     StatusBar,
