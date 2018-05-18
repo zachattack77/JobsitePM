@@ -7,9 +7,9 @@ import {NavController, NavParams} from "ionic-angular";
 })
 export class PhotoSelector {
 
-  public item: String;
+  public name: String;
   constructor(public navCtrl: NavController, private navParams: NavParams) {
-    this.item = this.navParams.get('item');
+    this.name = this.navParams.get('projectName');
   }
 
   goToCamera(){

@@ -1,16 +1,15 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Projects</ion-title>
+    <ion-title>{{name}}</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
   <ion-list>
-    <button ion-item (click)="">
+    <button ion-item (click)="goToCamera()">
       Take Picture
     </button>
-    <button ion-item (click)="">
+    <button ion-item (click)="goToPhotos()">
       Upload from Photos
     </button>
   </ion-list>

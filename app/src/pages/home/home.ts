@@ -34,28 +34,10 @@ export class HomePage {
   }
 
   goToProjects() {
-      this.navCtrl.push(ProjectPreview, {
-        item: "HELLO"
-
+      this.navCtrl.setRoot(ProjectPreview, {
+        // username: "",
+        // password: ""
       });
     }
-
-//functions
-  postData()
-  {
-
-  }
-  // {
-  //   var link = "http://www.pvashchuk.greenriverdev.com/328/jobsite/job.php";
-  //   var myData = JSON.stringify({email: this.data.email});
-  //
-  //   this.http.post(link,myData)
-  //     .subscribe(data=>{
-  //       this.data.response = data["_body"];
-  //       console.log(this.data.response);
-  //     }, error => {
-  //       console.log("Oooops!");
-  //     });
-  // }
 
 }
