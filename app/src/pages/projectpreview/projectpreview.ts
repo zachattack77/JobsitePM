@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams} from "ionic-angular";
+import {NavController, NavParams, App} from "ionic-angular";
+import {HomePage} from "../home/home";
 
 @Component({
   selector: 'prject-preview',
@@ -8,15 +9,11 @@ import {NavController, NavParams} from "ionic-angular";
 export class ProjectPreview {
 
   public item: String;
-  constructor(public navCtrl: NavController, private navParams: NavParams) {
+  constructor(public navCtrl: NavController, private navParams: NavParams, public app: App) {
     this.item = this.navParams.get('item');
   }
-
-
-  // constructor(private navParams: NavParams){
-  //   this.item = this.navParams.get('item');
-  // }
-
-
-
+  logout()
+  {
+    this.app.getRootNav().setRoot(HomePage);
+  }
 }

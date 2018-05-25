@@ -31,16 +31,15 @@ export class HomePage {
   }
 
 //functions
-login()
-{
-  if(this.formgroup.controls.email.value == "alex@gmail.com"&& this.formgroup.controls.password.value == "password")
+  login()
   {
-    this.navCtrl.push(ProjectPreview);
+    if(this.formgroup.controls.email.value == "alex@gmail.com"&& this.formgroup.controls.password.value == "password")
+    {
+      this.navCtrl.push(ProjectPreview);
+    }
+    else
+    {
+      alert("Login is invalid");
+    }
   }
-  else
-  {
-    alert("Login is invalid");
-  }
-}
-
 }
