@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Photo Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list center padding margin>
+    <ion-item>
+      <ion-label color="dark">Visibility</ion-label>
+      <ion-select>
+        <ion-option [selected]="true">Private</ion-option>
+        <ion-option>Public</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="dark">
+        Keywords
+      </ion-label>
+      <ion-select multiple="true">
+        <ion-option>Action Item</ion-option>
+        <ion-option>As Built</ion-option>
+        <ion-option>B.I.M.</ion-option>
+        <ion-option>Change Order</ion-option>
+        <ion-option>Design Issues</ion-option>
+        <ion-option>Equipment</ion-option>
+        <ion-option>Existing</ion-option>
+        <ion-option>Incorrect</ion-option>
+        <ion-option>Injury</ion-option>
+        <ion-option>Late</ion-option>
+        <ion-option>LEED</ion-option>
+        <ion-option>Problems</ion-option>
+        <ion-option>Progress</ion-option>
+        <ion-option>Quality Control</ion-option>
+        <ion-option>Safety</ion-option>
+        <ion-option>Time & Material</ion-option>
+        <ion-option>Violation</ion-option>
+        <ion-option>Warranty</ion-option>
+        <ion-option>Weather</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Subcontractors
+      </ion-label>
+      <ion-select multiple="true" [selectOptions]="subcontractors">
+
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="dark">Description</ion-label>
+      <ion-textarea></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <img src="{{ imgURL }}" />
+    </ion-item>
+  </ion-list>
+
+  <button ion-button type="submit" (click)="save()" block>Save Photo</button>
+
+</ion-content>
