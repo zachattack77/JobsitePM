@@ -25,7 +25,7 @@ export class PhotoProvider {
     return this.getAllPhotos().then(result => {
       if(result){
         result.push(photoURL);
-
+        alert("PHOTO LOCATION IS " + photoURL);
         return this.storage.set(STORAGE_KEY, result);
       }else{
         return this.storage.set(STORAGE_KEY, [photoURL]);
