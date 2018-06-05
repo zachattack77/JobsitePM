@@ -11,13 +11,15 @@ import { File } from "@ionic-native/file";
 import { IonicStorageModule } from "@ionic/storage";
 import { PhotoProvider } from '../providers/photo/photo';
 import {PhotoDetailsPage} from "../pages/photo-details/photo-details";
+import {ProjectPhotosPage} from "../pages/project-photos/project-photos";
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    PhotoDetailsPage
+    PhotoDetailsPage,
+    ProjectPhotosPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import {PhotoDetailsPage} from "../pages/photo-details/photo-details";
   entryComponents: [
     MyApp,
     HomePage,
-    PhotoDetailsPage
+    PhotoDetailsPage,
+    ProjectPhotosPage
   ],
   providers: [
     StatusBar,
