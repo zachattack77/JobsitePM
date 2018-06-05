@@ -13,11 +13,6 @@ const STORAGE_KEY = 'photos';
 
 @Injectable()
 export class PhotoProvider {
-
-  visibility: string;
-  keywords: string[];
-  description: string;
-
   constructor(public storage: Storage) {
   }
 
@@ -33,10 +28,19 @@ export class PhotoProvider {
     });
   }
 
+  saveData(photoURL, visibility, keywords, subcontractors, description){
+    this.getPhotoData(photoURL).then(result => {
+
+    });
+  }
 
 
   // Returns a promise when photos are retrieved
   getAllPhotos() {
     return this.storage.get(STORAGE_KEY);
+  }
+
+  getPhotoData(photoURL){
+    return this.storage.get(photoURL);
   }
 }
