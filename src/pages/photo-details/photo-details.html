@@ -9,7 +9,7 @@
   <ion-list center padding margin>
     <ion-item>
       <ion-label color="dark">Visibility</ion-label>
-      <ion-select>
+      <ion-select [(ngModel)]="visibility">
         <ion-option [selected]="true">Private</ion-option>
         <ion-option>Public</ion-option>
       </ion-select>
@@ -19,7 +19,7 @@
       <ion-label color="dark">
         Keywords
       </ion-label>
-      <ion-select multiple="true">
+      <ion-select [(ngModel)]="keywords" multiple="true">
         <ion-option>Action Item</ion-option>
         <ion-option>As Built</ion-option>
         <ion-option>B.I.M.</ion-option>
@@ -46,14 +46,14 @@
       <ion-label>
         Subcontractors
       </ion-label>
-      <ion-select multiple="true" [selectOptions]="subcontractors">
+      <ion-select [(ngModel)]="subcontractors" multiple="true" [selectOptions]="subcontractors">
 
       </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-label color="dark">Description</ion-label>
-      <ion-textarea></ion-textarea>
+      <ion-textarea [(ngModel)]="description"></ion-textarea>
     </ion-item>
     <ion-item>
       <img src="{{ imgURL }}" />

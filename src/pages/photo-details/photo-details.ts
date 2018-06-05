@@ -16,6 +16,10 @@ import {PhotoProvider} from "../../providers/photo/photo";
 export class PhotoDetailsPage {
   imgURL: string;
   parent: any;
+  visibility: any;
+  keywords: any[];
+  subcontractors: any[];
+  description: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public photoProv: PhotoProvider) {
     this.imgURL = navParams.get('imgURL');
