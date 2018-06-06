@@ -8,7 +8,7 @@ import {ProjectPhotosPage} from "../project-photos/project-photos";
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  public projects: string[];
   public item: String;
 
   constructor(public navCtrl: NavController, private navParams: NavParams, public app: App) {
