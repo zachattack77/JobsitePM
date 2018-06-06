@@ -30,7 +30,8 @@ export class PhotoProvider {
 
   saveData(photoURL, visibility, keywords, subcontractors, description){
     this.getPhotoData(photoURL).then(result => {
-
+      let data = {visibility, keywords, subcontractors, description};
+      return this.storage.set(photoURL, data);
     });
   }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {NavController, normalizeURL, Platform} from 'ionic-angular';
 import {Camera, CameraOptions} from '@ionic-native/camera';
 import {File} from "@ionic-native/file";
@@ -12,11 +12,12 @@ import {PhotoProvider} from "../../providers/photo/photo";
 })
 export class HomePage {
   photos: string[];
+  photoData: string[];
 
   constructor(public navCtrl: NavController, public camera: Camera, public file: File, public photoProv: PhotoProvider, public platform: Platform) {
-    this.platform.ready().then( result => {
-        this.updatePhotos();
-      });
+    this.platform.ready().then(result => {
+      this.updatePhotos();
+    });
 
   }
 
@@ -48,10 +49,17 @@ export class HomePage {
     this.updatePhotos();
   }
 
-  updatePhotos(){
-    this.photoProv.getAllPhotos().then(photos => {
-      this.photos = photos;
+  updatePhotos() {
+    this.photoProv.getAllPhotos().then((photos: string[]) => {
+      for(var i = 0; i < photos.length; i++){
+        this.photos[photos[i]] = this.getPhotoData(photos[i]);
+      }
+    });
+  }
 
+  getPhotoData(photoURL) {
+    this.photoProv.getPhotoData(photoURL).then(result => {
+      return result;
     });
   }
 }
