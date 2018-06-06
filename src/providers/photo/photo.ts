@@ -16,8 +16,8 @@ export class PhotoProvider {
   constructor(public storage: Storage) {
   }
 
-  savePhoto(photoURL){
-    return this.getAllPhotos().then(result => {
+  savePhoto(projectName, photoURL){
+    return this.getAllPhotos(projectName).then(result => {
       if(result){
         result.push(photoURL);
         alert("PHOTO LOCATION IS " + photoURL);
@@ -37,8 +37,8 @@ export class PhotoProvider {
 
 
   // Returns a promise when photos are retrieved
-  getAllPhotos() {
-    return this.storage.get(STORAGE_KEY);
+  getAllPhotos(projectName) {
+    return this.storage.get(projectName);
   }
 
   getPhotoData(photoURL){

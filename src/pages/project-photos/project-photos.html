@@ -7,12 +7,26 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ProjectPhotos</ion-title>
+    <ion-title>Project Photos</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
+  <ion-list *ngFor="let photo of photos">
+    <ion-item>
+      <!--URL Length: {{ photo.length }}-->
+      <img src="{{ photo }}" />
+    </ion-item>
+  </ion-list>
 
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="openCam()">
+      <ion-icon name="md-camera"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-fab left bottom>
+    <button ion-fab color="secondary" (click)="openGallery()">
+      <ion-icon name="albums"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>

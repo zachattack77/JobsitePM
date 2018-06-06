@@ -27,7 +27,7 @@ export class PhotoDetailsPage {
   }
 
   save(){
-    this.photoProv.savePhoto(this.imgURL).then(result => {
+    this.photoProv.savePhoto(this.parent.projectName, this.imgURL).then(result => {
       alert("Photo Saved!");
       this.parent.updatePhotos();
       this.navCtrl.pop();

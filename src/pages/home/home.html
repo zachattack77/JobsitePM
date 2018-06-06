@@ -1,27 +1,23 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      JobSite PM
-    </ion-title>
+    <ion-title>Projects</ion-title>
   </ion-navbar>
+  <button ion-button type="submit" (click)="logout()">Logout</button>
 </ion-header>
 
 <ion-content padding>
-  <ion-list *ngFor="let photo of photos">
-    <ion-item>
-      <!--URL Length: {{ photo.length }}-->
-      <img src="{{ photo }}" />
-    </ion-item>
+
+  <ion-list>
+    <button ion-item>
+      Project 1
+    </button>
+    <button ion-item>
+      Project 2
+    </button>
+    <button ion-item>
+      Project 3
+    </button>
   </ion-list>
 
-  <ion-fab right bottom>
-    <button ion-fab color="primary" (click)="openCam()">
-      <ion-icon name="md-camera"></ion-icon>
-    </button>
-  </ion-fab>
-  <ion-fab left bottom>
-    <button ion-fab color="secondary" (click)="openGallery()">
-      <ion-icon name="albums"></ion-icon>
-    </button>
-  </ion-fab>
+
 </ion-content>

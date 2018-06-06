@@ -1,31 +1,36 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
+  <ion-title>JobSite PM</ion-title>
 </ion-header>
 
-<ion-content padding center text-center="">
+<ion-content padding center text-center="" class="page-home">
   <ion-title>Login</ion-title>
-  <form [formGroup]="formgroup">
+  <form [formGroup]="formgroup" >
     <ion-list>
       <ion-item>
         <ion-label floating>Email</ion-label>
-        <ion-input type="text" formControlName="email"></ion-input>
+        <ion-input type="text" formControlName="email">
+        </ion-input>
       </ion-item>
+      <ion-item *ngIf="email.hasError('pattern') && email.touched">
+        <p> *Invalid Email</p>
+      </ion-item>
+
       <ion-item *ngIf="email.hasError('required') && email.touched">
         <p> *Email is required</p>
       </ion-item>
 
+
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-input type="text" formControlName="password" ></ion-input>
+        <ion-input type="password" formControlName="password">
+        </ion-input>
       </ion-item>
       <ion-item *ngIf="password.hasError('required') && password.touched">
         <p> *Password is required</p>
       </ion-item>
 
-
-      <button ion-button (click)="goToProjects()" type="submit">Login</button>
+      <!--[disabled]="formgroup.controls.email.valid"-->
+      <button ion-button type="submit" (click)="login()">Login</button>
     </ion-list>
 
     <pre>{{formgroup.value | json}}</pre>

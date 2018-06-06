@@ -1,65 +1,27 @@
 import {Component} from '@angular/core';
-import {NavController, normalizeURL, Platform} from 'ionic-angular';
-import {Camera, CameraOptions} from '@ionic-native/camera';
-import {File} from "@ionic-native/file";
-import {PhotoDetailsPage} from "../photo-details/photo-details";
-import {PhotoProvider} from "../../providers/photo/photo";
-
+import {App, NavController, NavParams} from "ionic-angular";
+import {LoginPage} from '../login/login';
+import {ProjectPhotosPage} from "../project-photos/project-photos";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  photos: string[];
-  photoData: string[];
 
-  constructor(public navCtrl: NavController, public camera: Camera, public file: File, public photoProv: PhotoProvider, public platform: Platform) {
-    this.platform.ready().then(result => {
-      this.updatePhotos();
-    });
+  public item: String;
 
+  constructor(public navCtrl: NavController, private navParams: NavParams, public app: App) {
+    this.item = this.navParams.get('item');
   }
 
-  openCam() {
-    this.getPhoto(this.camera.PictureSourceType.CAMERA);
+  logout() {
+    this.app.getRootNav().setRoot(LoginPage);
   }
 
-  openGallery() {
-    this.getPhoto(this.camera.PictureSourceType.SAVEDPHOTOALBUM);
-  }
+  // Add function that pushes ProjectPhotosPage with the project name onto navigation
 
-  getPhoto(srcType) {
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.FILE_URI,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE,
-      sourceType: srcType
-    };
-
-    this.camera.getPicture(options).then((imageURL) => {
-      alert(normalizeURL(imageURL));
-      this.navCtrl.push(PhotoDetailsPage, {
-        imgURL: normalizeURL(imageURL),
-        parent: this
-      });
-    });
-
-    this.updatePhotos();
-  }
-
-  updatePhotos() {
-    this.photoProv.getAllPhotos().then((photos: string[]) => {
-      for(var i = 0; i < photos.length; i++){
-        this.photos[photos[i]] = this.getPhotoData(photos[i]);
-      }
-    });
-  }
-
-  getPhotoData(photoURL) {
-    this.photoProv.getPhotoData(photoURL).then(result => {
-      return result;
-    });
+  goToProjectPhotos(projectName){
+    this.navCtrl.push(ProjectPhotosPage, {projectName : projectName});
   }
 }

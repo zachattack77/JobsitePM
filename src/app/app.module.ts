@@ -5,19 +5,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { Camera } from "@ionic-native/camera";
 import { File } from "@ionic-native/file";
 import { IonicStorageModule } from "@ionic/storage";
 import { PhotoProvider } from '../providers/photo/photo';
 import {PhotoDetailsPage} from "../pages/photo-details/photo-details";
 import {ProjectPhotosPage} from "../pages/project-photos/project-photos";
+import {LoginPage} from "../pages/login/login";
+import {HomePage} from "../pages/home/home";
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    LoginPage,
     PhotoDetailsPage,
     ProjectPhotosPage
   ],
@@ -30,6 +32,7 @@ import {ProjectPhotosPage} from "../pages/project-photos/project-photos";
   entryComponents: [
     MyApp,
     HomePage,
+    LoginPage,
     PhotoDetailsPage,
     ProjectPhotosPage
   ],
