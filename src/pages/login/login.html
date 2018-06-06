@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding center text-center="">
+  <ion-title>Login</ion-title>
+  <form [formGroup]="formgroup">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="email.hasError('required') && email.touched">
+        <p> *Email is required</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="text" formControlName="password" ></ion-input>
+      </ion-item>
+      <ion-item *ngIf="password.hasError('required') && password.touched">
+        <p> *Password is required</p>
+      </ion-item>
+
+
+      <button ion-button (click)="goToProjects()" type="submit">Login</button>
+    </ion-list>
+
+    <pre>{{formgroup.value | json}}</pre>
+
+  </form>
+</ion-content>
